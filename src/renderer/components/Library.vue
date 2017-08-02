@@ -3,6 +3,7 @@
       <h1 class="library-location-title"> >>></h1>
       <div class="buttons-bar">
         <button class="button add-to-queue" @click="addToQueue()">Add to queue</button>
+        <button class="button import-files"><router-link to="/import">Import</router-link></button>
         <button class="button add-to-playlist">Add to playlist</button>
         <button class="button create-playlist">Create playlist</button>
         <button class="button clear-selected" @click="clearSelectedList()">Clear selection</button>
