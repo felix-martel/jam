@@ -100,7 +100,7 @@ export default {
       this.$store.commit('next')
 
       // Special case : we've reached the end of the queue
-      if (this.$store.state.queue.hasReachedEnd) {
+      if (this.$store.state.Queue.hasReachedEnd) {
         // We move to start
         this.$store.commit('goTo', 0)
         // We stop playing
@@ -114,7 +114,7 @@ export default {
       this.$store.commit('previous')
 
       // Special case : we've reached the beginning of the queue
-      if (this.$store.state.queue.hasReachedStart) {
+      if (this.$store.state.Queue.hasReachedStart) {
         // Going to beginning of the song
         this.$store.commit('goToMoment', 0)
         this.audio.currentTime = 0

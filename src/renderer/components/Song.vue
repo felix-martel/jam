@@ -51,9 +51,6 @@ export default {
   },
 
   computed: {
-    count: function () {
-      return this.$store.state.count
-    }
   }
 }
 </script>

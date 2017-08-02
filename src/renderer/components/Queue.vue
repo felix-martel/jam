@@ -180,10 +180,7 @@ export default {
   },
   computed: {
     songs: function () {
-      return this.$store.state.queue.songs
-    },
-    count: function () {
-      return this.$store.state.count
+      return this.$store.state.Queue.songs
     },
     ...mapGetters({
       selectedList: 'selectedList',
