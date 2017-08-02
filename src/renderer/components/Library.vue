@@ -129,7 +129,7 @@ export default {
   },
   computed: {
     songs: function () {
-      return this.$store.state.lib.songs
+      return this.$store.state.library.songs
     },
     count: function () {
       return this.$store.state.count
