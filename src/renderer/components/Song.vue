@@ -2,7 +2,7 @@
   <div class="song-container"
     :class="{selected: song.isSelected}"
     >
-    <button class="button play-button" @click="playPause()">Play/Pause</button>
+    <button class="button play-button" @click="playPause()"><i class="fa fa-play"></i></i></button>
     <div class="song-infos">
       <div class="song-title">
         {{ song.title }}
@@ -12,15 +12,15 @@
       </div>
     </div>
     <div class="song-actions">
-      <button class="inline-button button select" @click="select()">
+      <!--<button class="inline-button button select" @click="select()">
         Select
-      </button>
+      </button>-->
       <button class="inline-button button like" @click="like()">
-        Like
+        <i class="fa fa-heart"></i>
       </button>
-      <button class="inline-button button remove" @click="remove()">
+      <!--<button class="inline-button button remove" @click="remove()">
         Remove
-      </button>
+      </button>-->
     </div>
   </div>
 </template>
@@ -56,17 +56,21 @@ export default {
 </script>
 
 <style>
+button i.fa {
+  font-size: 0.75em;
+}
 .song-container {
   box-sizing: border-box;
   display: flex;
-  flex-flow: row wrap;
+  flex-flow: row nowrap;
   justify-content: flex-start;
   align-items: center;
   width: 100%;
   padding: 10px 30px;
-  margin: 0 auto;
+  margin: 2px auto;
+  border-radius: 3px;
 
-  border: 2px solid black;
+  border: 1px solid lightgray;
   font-family: sans-serif;
 }
 
@@ -80,16 +84,16 @@ export default {
   }
 }
 
+.song-container.reverse.selected {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
 .song-container.shrink {
   padding: 8px 3px;
 }
 
-.song-container.shrink.selected {
-  padding: 6px 1px;
-}
-
 .song-container.selected {
-  border-color: red;
+  background-color: rgba(120, 120, 120, 0.1);
 }
 
 .song-infos {
@@ -103,6 +107,8 @@ export default {
 }
 
 .song-actions {
+  display: flex;
+  flex-flow: row nowrap;
   margin-left: auto;
 }
 

@@ -28,8 +28,19 @@ const SONGS = (function (n) {
   return l
 })(100)
 
+const PLAYLISTS = [
+  {name: 'Années 80', id: '1'},
+  {name: 'Chill mix', id: '1'},
+  {name: 'rock & roll', id: '1'},
+  {name: 'Mixtapes 017', id: '1'},
+  {name: 'Full Polnareff', id: '1'},
+  {name: '100% Balavoine', id: '1'},
+  {name: 'Tropical Summer Party', id: '1'}
+]
+
 const state = {
-  songs: SONGS
+  songs: SONGS,
+  playlists: PLAYLISTS
 }
 
 const getters = {

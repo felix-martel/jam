@@ -13,6 +13,7 @@
           v-for="(song, index) in songs"
           draggable="true"
           v-on:dragstart.native="dragstartHandler($event, index)"
+          v-on:dragend.native="dragendHandler()"
 
           :key="index"
           :song="song"
@@ -32,12 +33,17 @@ export default {
   components: {Song},
   methods: {
     dragstartHandler: function (e, i) {
+      this.$emit('dragging-start')
       if (this.selectedList.length === 0) this.addToSelected(i)
       if (!this.isSelected(i)) {
         this.clearSelectedList()
         this.addToSelected(i)
       }
       e.dataTransfer.setData('text/JSON', JSON.stringify(this.getSongsFromSelectedList()))
+    },
+    dragendHandler: function () {
+      this.$emit('dragging-end')
+      console.log('end')
     },
     // Click handling
     dispatchSongClick: function (i, e) {
@@ -146,6 +152,9 @@ export default {
 .library-location-title {
   margin: 0;
   font-family: sans-serif;
+}
+.list-song-container {
+  padding: 4px 2px;
 }
 .buttons-bar {
   display: flex;
